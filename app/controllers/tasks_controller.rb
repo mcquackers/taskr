@@ -1,16 +1,15 @@
 class TasksController < ApplicationController
   def index
     @task = current_user.tasks.new
-    @tasks = current_user.tasks.all
+    @tasks = current_user.tasks.incomplete
   end
 
   def create
-    task = current_user.tasks.new(task_params)
-    if task.save
-      redirect_to tasks_path
+    @task = current_user.tasks.new(task_params)
+    if @task.save
+      redirect_to root_path
     else
-      @task = task
-      @tasks = current_user.tasks.all
+      @tasks = current_user.tasks.incomplete
       render :index
     end
   end
