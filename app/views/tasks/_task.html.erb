@@ -1,2 +1,5 @@
 <li><strong><%= task.title %></strong>  --  <%= task.description %>
-<%= button_to "Completed!", task_path(task.id), method: :patch %></li>
+<%= form_for task do |form| %>
+  <%= form.hidden_field :completed, value: 1 %>
+  <%= form.submit "Complete Task" %>
+<% end %></li>
