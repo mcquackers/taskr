@@ -7,7 +7,7 @@ class TasksController < ApplicationController
   def create
     @task = current_user.tasks.new(task_params)
     if @task.save
-      redirect_to tasks_path
+      render @task
     else
       @tasks = current_user.tasks.incomplete
       render :index
