@@ -1,1 +1,2 @@
-<li><strong><%= task.title %></strong>  --  <%= task.description %></li>
+<li><strong><%= task.title %></strong>  --  <%= task.description %>
+<%= button_to "Completed!", task_path(task.id), method: :patch %></li>
