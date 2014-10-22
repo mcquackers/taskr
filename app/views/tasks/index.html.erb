@@ -9,7 +9,11 @@
    <br />
   <%= form.submit %>
 <% end %>
-
-<ul id="task-list">
-  <%= render @tasks %>
+<h3>Incomplete tasks</h3>
+<ul id="incomplete-task-list">
+  <%= render @incomplete_tasks %>
+</ul>
+<h3>Complete tasks</h3>
+<ul id="completed-task-list">
+  <%= render @completed_tasks %>
 </ul>

@@ -1,5 +1,9 @@
 <li><strong><%= task.title %></strong>  --  <%= task.description %>
-<%= form_for task do |form| %>
-  <%= form.hidden_field :completed, value: 1 %>
-  <%= form.submit "Complete Task" %>
+<% if task.completed %>
+  <%= button_to "Clear Task", task_path(task.id), method: :delete %>
+<% else %>
+  <%= form_for task do |form| %>
+    <%= form.hidden_field :completed, value: 1 %>
+    <%= form.submit "Complete Task" %>
+  <% end %>
 <% end %></li>

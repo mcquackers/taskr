@@ -1,7 +1,8 @@
 class TasksController < ApplicationController
   def index
     @task = current_user.tasks.new
-    @tasks = current_user.tasks.incomplete
+    @incomplete_tasks = current_user.tasks.incomplete
+    @completed_tasks = current_user.tasks.completed
   end
 
   def create
@@ -17,6 +18,11 @@ class TasksController < ApplicationController
   def update
     task = Task.find(params[:id])
     task.update(task_params)
+    redirect_to tasks_path
+  end
+
+  def destroy
+    Task.destroy(params[:id])
     redirect_to tasks_path
   end
 
