@@ -10,8 +10,9 @@ class TasksController < ApplicationController
     if @task.save
       render @task
     else
-      @tasks = current_user.tasks.incomplete
-      render :index
+      render partial: "error_messages",
+        locals: {target: @task},
+        status: 422
     end
   end
 
