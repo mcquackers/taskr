@@ -1,5 +1,5 @@
-<li id="task_<%= task.id %>">
-<strong><%= task.title %></strong>  --  <%= task.description %>
+<li data-id="<%= task.id %>">
+<strong class="title"><%= task.title %></strong>  --  <span class="description"><%= task.description %></span>
 <% if task.completed %>
   <%= button_to "Clear Task", task_path(task.id), form_class: "delete", method: :delete %>
   <%= form_for task, html: { class: "completed" } do |form| %>
