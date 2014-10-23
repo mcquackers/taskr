@@ -13,7 +13,6 @@ $(function() {
     taskList.find("#task_" + task.id).fadeOut();
   };
 
-
   //$("#completed-task-list").on("submit", ".delete", deleteDataFromServer);
   $("body").on("submit", ".delete", deleteDataFromServer);
 });

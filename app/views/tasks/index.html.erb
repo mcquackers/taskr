@@ -10,11 +10,11 @@
    <br />
   <%= form.submit %>
 <% end %>
-<h3>Incomplete tasks</h3>
+<h3 id="incomplete-task-header" data-list-id="incomplete-task-list">Incomplete tasks</h3>
 <ul id="incomplete-task-list">
   <%= render @incomplete_tasks %>
 </ul>
-<h3>Complete tasks</h3>
+<h3 id="completed-task-header" data-list-id="completed-task-list">Complete tasks</h3>
 <ul id="completed-task-list">
   <%= render @completed_tasks %>
 </ul>

@@ -1,8 +1,8 @@
 class TasksController < ApplicationController
   def index
     @task = current_user.tasks.new
-    @incomplete_tasks = current_user.tasks.incomplete
-    @completed_tasks = current_user.tasks.completed
+    @incomplete_tasks = current_user.tasks.incomplete.order("created_at DESC")
+    @completed_tasks = current_user.tasks.completed.order("created_at DESC")
   end
 
   def create
