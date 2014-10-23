@@ -13,16 +13,15 @@ $(function() {
 
   var updateFunctionForElement = function(element) {
     return function(updatedTask) {
-      element.parent().fadeOut();
+      element.parent("li").fadeOut();
       eTask = $(updatedTask);
       eTask.hide();
       if(element.hasClass("incomplete")){
         completedTaskList.append(eTask);
-        eTask.fadeIn();
       } else {
         incompleteTaskList.prepend(eTask);
-        eTask.fadeIn();
       }
+      eTask.fadeIn();
     };
   };
 
