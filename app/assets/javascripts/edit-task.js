@@ -14,7 +14,6 @@ $(function() {
     var key = updatedData.attr("class");
     var data = {};
     data[key] = updatedData.text();
-    debugger
     var convo = $.ajax({ 
       url: "/tasks/"+updatedData.parent().data("id"), 
       type: "PATCH", 
